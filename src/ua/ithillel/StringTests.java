@@ -15,7 +15,8 @@ public class StringTests {
     }
 
     public static int findSymbolOccurrence(String str, char ch) {
-        char[] chars = str.toCharArray();
+        String corrected = str.toLowerCase(Locale.ROOT);
+        char[] chars = corrected.toCharArray();
         int count = 0;
         for (int i = 0; i < chars.length; i++) {
             if (chars[i] == ch) {
@@ -38,7 +39,7 @@ public class StringTests {
     }
 
     public static boolean isPalindrome(String text) {
-        String corrected = text.replaceAll("\\s+", "").toLowerCase(Locale.ROOT);
+        String corrected = text.toLowerCase(Locale.ROOT);
         StringBuilder sb = new StringBuilder(corrected);
         StringBuilder reverse = sb.reverse();
         return (reverse.toString()).equals(corrected);
