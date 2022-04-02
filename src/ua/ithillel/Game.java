@@ -23,8 +23,9 @@ public class Game {
             } else if (!inputWord.matches("[a-z]+")) {
                 System.out.println("This isn't a word. Try again.");
             } else {
-                for (int i = 0; guessedWord.length() > i && inputWord.length() > i; i++) {
-                    if (i < MAX_LENGTH && guessedWord.charAt(i) == inputWord.charAt(i)) {
+                for (int i = 0; i < MAX_LENGTH; i++) {
+                    if (guessedWord.length() > i && inputWord.length() > i
+                            && guessedWord.charAt(i) == inputWord.charAt(i)) {
                         System.out.print(inputWord.charAt(i));
                     } else {
                         System.out.print("#");
